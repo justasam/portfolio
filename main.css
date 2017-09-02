@@ -96,8 +96,8 @@ h1 {
   background-blend-mode: multiply;
   text-align: left;
   color: white;
-  border-radius: 7px 0px 0px 7px;
-  width: 90%;
+  border-radius: 7px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -113,47 +113,98 @@ h1 {
   height: 33.3%;
 }
 
+.goback {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 2s;
+}
 
 @keyframes gobig {
-  0% {}
   25% {
-    margin-left: -42%; 
-    
+    margin-left: -52%; 
+  }
+  100% {
+  margin-left: 0%; box-shadow: 1px 0px 80px 6px rgba(0,0,0,0.51);
+        z-index: 9999;
+    cursor:default;
+}
+}
+@keyframes gohome {
+    25% {
+      margin-left: 52%;
+    }
+  50% {
+          z-index: -1;
+
+  }
+    100% {margin-left: 10%; z-index: -1; box-shadow: none;}
+}
+
+@keyframes debig {
+  25% {
+    margin-left: -52%;
+  }
+  100% {
+    margin-left: 0%;
+    z-index: 0;
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+
+@keyframes dehome {
+  25% {
+    margin-left: 52%;
   }
   50% {
     z-index: 1;
   }
-  75% {
-    box-shadow: 1px 0px 80px 6px rgba(0,0,0,0.51);
-  }
   100% {
-  margin-left: 0%; box-shadow: 1px 0px 80px 6px rgba(0,0,0,0.51);
-}
-}
-@keyframes gohome {
-    0% {}
-    25% {
-      margin-left: 52%;
-      
-    }
-  50% {
-    z-index: -1; 
-        box-shadow: none;
-
+    margin-left: 40%;
+    z-index: 1;
+    box-shadow:  -1px 0px 80px 6px rgba(0,0,0,0.51);
   }
-    100% {margin-left: 40%; z-index: -1; box-shadow: none;}
 }
 
-#on:checked ~ label .info {
-  animation-name: gohome;
-  animation-duration: 1.3s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode:forwards;
-}
-
-#on:checked ~ label .project-detail {
+.fill {
   animation-name: gobig;
   animation-duration: 1.3s;
+  animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
-  animation-fill-mode:forwards;
+}
+
+.fill ~ .info {
+  animation-name: gohome;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.fill .goback {
+  opacity: 1;
+}
+
+
+.defill {
+  box-shadow: 1px 0px 80px 6px rgba(0,0,0,0.51);
+  animation-name: debig;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.defill ~ .info {
+  box-shadow: none;
+  z-index: -1;
+  animation-name: dehome;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.defill .goback {
+  opacity: 0;
 }
