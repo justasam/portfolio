@@ -69,19 +69,20 @@ h1 {
   height: 90vh;
   border-radius: 7px;
   box-sizing: border-box;
-  -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+/*
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+*/
 }
 
-.container > div {
-  display: inline-block;
-  position: relative;
-  width: 50%;
-  height: 100%;
-  float: left;
+.info {
+  margin-left: 40%;
 }
 
 .project-detail, .info {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
@@ -89,17 +90,70 @@ h1 {
 }
 
 .project-detail {
-  background: linear-gradient(to bottom, #b6d3fc, #b6d3eb);
+  background-image: linear-gradient(to bottom, #b6d3fc, #b6d3eb), url('http://cdn.images.express.co.uk/img/dynamic/151/590x/secondary/SecureTeam10-Tyler-huge-circular-object-spotted-under-Pacific-Ocean-849412.jpg');
+  background-repeat: no-repeat;
+  background-size: 90vh 90vh;
+  background-blend-mode: multiply;
+  text-align: left;
   color: white;
   border-radius: 7px 0px 0px 7px;
+  width: 90%;
   cursor: pointer;
 }
 
 .info {
   color: #999;
+  width: 60%;
   background: white;
+  border-radius: 0px 7px 7px 0px;
+  box-shadow: -1px 0px 80px 6px rgba(0,0,0,0.51);
 }
 
 .info > div {
   height: 33.3%;
+}
+
+
+@keyframes gobig {
+  0% {}
+  25% {
+    margin-left: -42%; 
+    
+  }
+  50% {
+    z-index: 1;
+  }
+  75% {
+    box-shadow: 1px 0px 80px 6px rgba(0,0,0,0.51);
+  }
+  100% {
+  margin-left: 0%; box-shadow: 1px 0px 80px 6px rgba(0,0,0,0.51);
+}
+}
+@keyframes gohome {
+    0% {}
+    25% {
+      margin-left: 52%;
+      
+    }
+  50% {
+    z-index: -1; 
+        box-shadow: none;
+
+  }
+    100% {margin-left: 40%; z-index: -1; box-shadow: none;}
+}
+
+#on:checked ~ label .info {
+  animation-name: gohome;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:forwards;
+}
+
+#on:checked ~ label .project-detail {
+  animation-name: gobig;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:forwards;
 }
