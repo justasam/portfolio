@@ -67,6 +67,8 @@ h1 {
   margin-top: 5vh;
   width: 90vh;
   height: 90vh;
+  max-width: 90vw;
+  max-height: 90vw;
   border-radius: 7px;
   box-sizing: border-box;
 /*
@@ -207,4 +209,29 @@ h1 {
 
 .defill .goback {
   opacity: 0;
+}
+.skills progress {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.skills progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.skills progress::-webkit-progress-value {
+  background-image: linear-gradient(to right, #b6d3fc, #b6d3eb);
+  border-radius: 2px;
+}
+.skills progress::after {
+  content: attr(data-name);
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  line-height: 20px;
+  width: 100%;
 }
