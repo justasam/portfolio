@@ -1,0 +1,5 @@
+TODO:
+  Integrate JS to switch projects
+  Make the website responsive
+  Clean up the code & add more browser support
+  Backend?
