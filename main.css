@@ -112,9 +112,8 @@ h1 {
 }
 
 .info > div {
-  height: 33.3%;
+  padding: 10px;
 }
-
 .goback {
   position: absolute;
   top: 20px;
@@ -210,12 +209,21 @@ h1 {
 .defill .goback {
   opacity: 0;
 }
+
+.skills {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+}
 .skills progress {
   -webkit-appearance: none;
   appearance: none;
   position: relative;
   margin-top: 30px;
   margin-bottom: 20px;
+}
+.skills progress:nth-child(2n) {
+  margin-right: 20px;
 }
 .skills progress::-webkit-progress-bar {
   background-color: #eee;
@@ -234,4 +242,28 @@ h1 {
   top: -20px;
   line-height: 20px;
   width: 100%;
+}
+#projectlist {
+  padding-top: 20px;
+  font-size: 16px;
+  text-align: left;
+  padding-bottom: 20px;
+}
+#projectlist li {
+  position: relative;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+#projectlist li.active {
+  color: #616161; 
+}
+.footer_info {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 16px;
+  font-family: monospace;
 }
