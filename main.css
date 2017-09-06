@@ -249,13 +249,21 @@ h1 {
   text-align: left;
   padding-bottom: 20px;
 }
+#projectlist a {
+  color: #999;
+  text-decoration: none;
+}
 #projectlist li {
   position: relative;
   padding-left: 25px;
   padding-bottom: 10px;
 }
-#projectlist li.active {
+#projectlist a.active {
   color: #616161; 
+}
+#projectlist a:hover {
+  color: #717171;
+  cursor: pointer;
 }
 .footer_info {
   position: absolute;
@@ -266,4 +274,23 @@ h1 {
   white-space: pre-line;
   font-size: 16px;
   font-family: monospace;
+}
+
+
+.tools {
+  font-size: 16px;
+  font-family: monospace;
+  padding: 10px 0;
+}
+.desc {
+  font-size: 18px;
+  color: aliceblue;
+}
+
+#microconsole {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: green;
+  color: white;
 }
